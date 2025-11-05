@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel Management System</title>
+<style>
+body {
+font-family: sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+.container {
+width: 80%;
+margin: 20px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2 {
+text-align: center;
+color: #333;
+}
+form {
+margin-top: 20px;
+}
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+width: calc(100% - 12px);
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:hover {
+background-color: #3e8e41;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 8px;
+text-align: left;
+}
+th {
+background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Hostel Management System</h1>
+<h2>Student Registration</h2>
+<form id="studentForm">
+<label for="studentName">Name:</label>
+<input type="text" id="studentName" name="studentName" required>
+<label for="studentEmail">Email:</label>
+<input type="email" id="studentEmail" name="studentEmail" required>
+<label for="studentRoom">Room Number:</label>
+<input type="number" id="studentRoom" name="studentRoom" required>
+<label for="studentCourse">Course:</label>
+<select id="studentCourse" name="studentCourse">
+<option value="CS">Computer Science</option>
+<option value="EE">Electrical Engineering</option>
+<option value="ME">Mechanical Engineering</option>
+<option value="BA">Business Administration</option>
+</select>
+<button type="button" onclick="addStudent()">Register Student</button>
+</form>
+<h2>Student List</h2>
+<table id="studentTable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Room Number</th>
+<th>Course</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<script>
+function addStudent() {
+const name = document.getElementById('studentName').value;
+const email = document.getElementById('studentEmail').value;
+const room = document.getElementById('studentRoom').value;
+const course = document.getElementById('studentCourse').value;
+const table = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+const newRow = table.insertRow(table.rows.length);
+const cell1 = newRow.insertCell(0);
+const cell2 = newRow.insertCell(1);
+const cell3 = newRow.insertCell(2);
+const cell4 = newRow.insertCell(3);
+cell1.innerHTML = name;
+cell2.innerHTML = email;
+cell3.innerHTML = room;
+cell4.innerHTML = course;
+document.getElementById('studentForm').reset();
+}
+</script>
+</body>
+</html>
+Student Payment Method:-
+<!DOCTYPE html>
+<Html>
+<head>
+<title>Student Payment</title>
+<style>
+body {
+font-family: sans-serif;
+margin: 20px;
+}
+form {
+width: 400px;
+margin: 0 auto;
+border: 1px solid #ccc;
+padding: 20px;
+border-radius: 5px;
+}
+label {
+display: block;
+margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"],
+select {
+width: calc(100% - 12px); /* Adjust width for padding and border */
+padding: 5px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+input[type="submit"]:hover {
+background-color: #3e8e41;
+}
+.h2{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h2>Student Payment</h2>
+<form id="paymentForm">
+<label for="studentId">Student ID:</label>
+<input type="text" id="studentId" name="studentId" required>
+<label for="studentName">Student Name:</label>
+<input type="text" id="studentName" name="studentName" required>
+<label for="paymentAmount">Payment Amount:</label>
+<input type="number" id="paymentAmount" name="paymentAmount" required>
+<label for="paymentMethod">Payment Method:</label>
+<select id="paymentMethod" name="paymentMethod" required>
+<option value="">Select Method</option>
+<option value="cash">Cash</option>
+<option value="credit_card">Credit Card</option>
+<option value="debit_card">Debit Card</option>
+<option value="online_transfer">Online Transfer</option>
+<option value="check">Check</option>
+</select>
+<label for="transactionId">Transaction ID/Check Number (if applicable):</label>
+<input type="text" id="transactionId" name="transactionId">
+<input type="submit" value="Submit Payment">
+</form>
+<script>
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+event.preventDefault(); // Prevent default form submission
+const studentId = document.getElementById('studentId').value;
+const studentName = document.getElementById('studentName').value;
+const paymentAmount = document.getElementById('paymentAmount').value;
+const paymentMethod = document.getElementById('paymentMethod').value;
+const transactionId = document.getElementById('transactionId').value;
+// Here you would typically send the data to a server-side script
+// for processing and database storage.
+// For demonstration, we'll just log the data to the console.
+console.log("Student ID:", studentId);
+console.log("Student Name:", studentName);
+console.log("Payment Amount:", paymentAmount);
+console.log("Payment Method:", paymentMethod);
+console.log("Transaction ID/Check Number:", transactionId);
+alert("Payment submitted (check console for details)."); //simple feedback.
+// Optionally clear the form after submission:
+document.getElementById("paymentForm").reset();
+});
+</script>
+</body>
+</html>
+Student Attendance Method:-
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Attendance</title>
+<style>
+body {
+font-family: sans-serif;
+margin: 20px;
+}
+form {
+width: 400px;
+margin: 0 auto;
+border: 1px solid #ccc;
+padding: 20px;
+border-radius: 5px;
+}
+label {
+display: block;
+margin-bottom: 5px;
+}
+input[type="text"],
+input[type="date"],
+select {
+width: calc(100% - 12px);
+padding: 5px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+input[type="submit"]:hover {
+background-color: #3e8e41;
+}
+.h2{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h2>Student Attendance</h2>
+<form id="attendanceForm">
+<label for="studentId">Student ID:</label>
+<input type="text" id="studentId" name="studentId" required>
+<label for="studentName">Student Name:</label>
+<input type="text" id="studentName" name="studentName" required>
+<label for="attendanceDate">Date:</label>
+<input type="date" id="attendanceDate" name="attendanceDate" required>
+<label for="attendanceStatus">Attendance Status:</label>
+<select id="attendanceStatus" name="attendanceStatus" required>
+<option value="">Select Status</option>
+<option value="present">Present</option>
+<option value="absent">Absent</option>
+<option value="late">Late</option>
+<option value="excused">Excused</option>
+</select>
+<input type="submit" value="Submit Attendance">
+</form>
+<script>
+document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+event.preventDefault();
+const studentId = document.getElementById('studentId').value;
+const studentName = document.getElementById('studentName').value;
+const attendanceDate = document.getElementById('attendanceDate').value;
+const attendanceStatus = document.getElementById('attendanceStatus').value;
+console.log("Student ID:", studentId);
+console.log("Student Name:", studentName);
+console.log("Attendance Date:", attendanceDate);
+console.log("Attendance Status:", attendanceStatus);
+alert("Attendance submitted (check console for details).");
+document.getElementById("attendanceForm").reset();
+});
+</script>
+</body>
+</html>
+Building Structure:-
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel Building Structure</title>
+<style>
+body {
+font-family: sans-serif;
+margin: 20px;
+}
+.building-container {
+border: 1px solid #ddd;
+padding: 20px;
+border-radius: 8px;
+max-width: 800px;
+margin: 0 auto;
+}
+.floor {
+border: 1px solid #eee;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 5px;
+}
+.room {
+border: 1px solid #f0f0f0;
+padding: 8px;
+margin: 5px;
+display: inline-block;
+border-radius: 3px;
+}
+.floor-header {
+font-weight: bold;
+margin-bottom: 5px;
+}
+.room-occupied{
+background-color: #ffe6e6;
+}
+.room-vacant{
+background-color: #e6ffe6;
+}
+.room-maintenance{
+background-color: #fffacd;
+}
+.room-details{
+display: none;
+border: 1px solid #ccc;
+padding: 10px;
+margin-top: 5px;
+background-color: #f9f9f9;
+}
+.room:hover .room-details{
+display: block;
+}
+</style>
+</head>
+<body>
+<div class="building-container">
+<h2>Hostel Building Structure</h2>
+<div class="floor">
+<div class="floor-header">Ground Floor</div>
+<div class="room room-vacant" data-room-number="G1" data-room-type="Single" data-capacity="1">G1<div class="room-details">Room Type: Single<br>Capacity: 1<br>Status: Vacant</div></div>
+<div class="room room-occupied" data-room-number="G2" data-room-type="Double" data-capacity="2">G2<div class="room-details">Room Type: Double<br>Capacity: 2<br>Status: Occupied</div></div>
+<div class="room room-maintenance" data-room-number="G3" data-room-type="Single" data-capacity="1">G3<div class="room-details">Room Type: Single<br>Capacity: 1<br>Status: Maintenance</div></div>
+<div class="room room-vacant" data-room-number="G4" data-room-type="Double" data-capacity="2">G4<div class="room-details">Room Type: Double<br>Capacity: 2<br>Status: Vacant</div></div>
+<div class="room room-occupied" data-room-number="G5" data-room-type="Single" data-capacity="1">G5<div class="room-
+details">Room Type: Single<br>Capacity: 1<br>Status: Occupied</div></div>
+</div>
+<div class="floor">
+<div class="floor-header">First Floor</div>
+<div class="room room-vacant" data-room-number="101" data-room-type="Double" data-capacity="2">101<div class="room-details">Room Type: Double<br>Capacity: 2<br>Status: Vacant</div></div>
+<div class="room room-occupied" data-room-number="102" data-room-type="Triple" data-capacity="3">102<div class="room-details">Room Type: Triple<br>Capacity: 3<br>Status: Occupied</div></div>
+<div class="room room-vacant" data-room-number="103" data-room-type="Single" data-capacity="1">103<div class="room-details">Room Type: Single<br>Capacity: 1<br>Status: Vacant</div></div>
+<div class="room room-maintenance" data-room-number="104" data-room-type="Double" data-capacity="2">104<div class="room-
+details">Room Type: Double<br>Capacity: 2<br>Status: Maintenance</div></div>
+<div class="room room-occupied" data-room-number="105" data-room-type="Triple" data-capacity="3">105<div class="room-details">Room Type: Triple<br>Capacity: 3<br>Status: Occupied</div></div>
+</div>
+<div class="floor">
+<div class="floor-header">Second Floor</div>
+<div class="room room-occupied" data-room-number="201" data-room-type="Single" data-capacity="1">201<div class="room-details">Room Type: Single<br>Capacity: 1<br>Status: Occupied</div></div>
+<div class="room room-vacant" data-room-number="202" data-room-type="Double" data-capacity="2">202<div class="room-details">Room Type: Double<br>Capacity: 2<br>Status: Vacant</div></div>
+<div class="room room-occupied" data-room-number="203" data-room-type="Triple" data-capacity="3">203<div class="room-
+details">Room Type: Triple<br>Capacity: 3<br>Status: Occupied</div></div>
+<div class="room room-maintenance" data-room-number="204" data-room-type="Single" data-capacity="1">204<div class="room-details">Room Type: Single<br>Capacity: 1<br>Status: Maintenance</div></div>
+<div class="room room-vacant" data-room-number="205" data-room-type="Double" data-capacity="2">205<div class="room-details">Room Type: Double<br>Capacity: 2<br>Status: Vacant</div></div>
+</div>
+</div>
+</body>
+</html>
