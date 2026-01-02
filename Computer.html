@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Lab Manager</title>
+    <link rel="stylesheet" href="lab-style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Lab Admin</h2>
+        <ul>
+            <li><a href="#">Monitor Lab</a></li>
+            <li><a href="#">PC Maintenance</a></li>
+            <li><a href="#">Software Licenses</a></li>
+            <li><a href="#">Internet Usage</a></li>
+        </ul>
+    </div>
+
+    <div class="main-container">
+        <header>
+            <h1>Lab 01: Computer Science Wing</h1>
+            <div class="legend">
+                <span class="status available">Available</span>
+                <span class="status occupied">Occupied</span>
+                <span class="status faulty">Faulty</span>
+            </div>
+        </header>
+
+        <section class="lab-grid">
+            <div class="pc-node occupied">PC-01 <br><small>User: Student_A</small></div>
+            <div class="pc-node available">PC-02 <br><small>Empty</small></div>
+            <div class="pc-node occupied">PC-03 <br><small>User: Student_C</small></div>
+            <div class="pc-node faulty">PC-04 <br><small>No Boot</small></div>
+            <div class="pc-node available">PC-05 <br><small>Empty</small></div>
+            <div class="pc-node available">PC-06 <br><small>Empty</small></div>
+            <div class="pc-node occupied">PC-07 <br><small>User: Student_K</small></div>
+            <div class="pc-node available">PC-08 <br><small>Empty</small></div>
+            <div class="pc-node available">PC-09 <br><small>Empty</small></div>
+            <div class="pc-node faulty">PC-10 <br><small>Monitor Issue</small></div>
+        </section>
+
+        <section class="schedule">
+            <h3>Class Schedule - Today</h3>
+            <table>
+                <tr>
+                    <th>Time Slot</th>
+                    <th>Grade</th>
+                    <th>Topic</th>
+                    <th>Instructor</th>
+                </tr>
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td>Grade 8</td>
+                    <td>Intro to HTML</td>
+                    <td>Mr. Smith</td>
+                </tr>
+                <tr>
+                    <td>10:30 - 11:30</td>
+                    <td>Grade 10</td>
+                    <td>Python Loops</td>
+                    <td>Ms. Davis</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+</body>
+</html>
